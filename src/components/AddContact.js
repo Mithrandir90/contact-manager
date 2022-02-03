@@ -8,17 +8,18 @@ class AddContact extends React.Component {
 
   add = (e) => {
     e.preventDefault();
-    if (this.state.name === "" && this.state.email === "") {
+    if (this.state.name === "" || this.state.email === "") {
       alert("Input not valid");
       return;
     }
+    console.log(this.state);
   };
 
   render() {
     return (
       <div className="ui main">
         <h2>Add Contact</h2>
-        <form className="ui form" onSumbit={this.add}>
+        <form className="ui form" onSubmit={this.add}>
           <div className="field">
             <label>Name</label>
             <input
